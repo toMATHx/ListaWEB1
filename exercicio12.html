@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 12 - Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .opcao { margin: 10px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <p>Qual é a capital do Brasil?</p>
+    <div class="opcao">
+        <input type="radio" name="resposta" id="op1" value="São Paulo">
+        <label for="op1">São Paulo</label>
+    </div>
+    <div class="opcao">
+        <input type="radio" name="resposta" id="op2" value="Rio de Janeiro">
+        <label for="op2">Rio de Janeiro</label>
+    </div>
+    <div class="opcao">
+        <input type="radio" name="resposta" id="op3" value="Brasília">
+        <label for="op3">Brasília</label>
+    </div>
+    <div class="opcao">
+        <input type="radio" name="resposta" id="op4" value="Salvador">
+        <label for="op4">Salvador</label>
+    </div>
+    <button onclick="verificarResposta()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarResposta() {
+            const opcoes = document.getElementsByName('resposta');
+            const resultado = document.getElementById('resultado');
+            let selecionado = '';
+            for (const opcao of opcoes) {
+                if (opcao.checked) {
+                    selecionado = opcao.value;
+                    break;
+                }
+            }
+            if (!selecionado) {
+                resultado.textContent = "Selecione uma opção.";
+                return;
+            }
+            resultado.textContent = selecionado === 'Brasília' ? "Correto!" : "Errado. A capital é Brasília.";
+        }
+    </script>
+</body>
+</html>

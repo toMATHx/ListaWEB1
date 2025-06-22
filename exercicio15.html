@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 15 - Cronômetro</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #tempo { font-size: 24px; margin: 20px; }
+        button { margin: 5px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Cronômetro</h1>
+    <p id="tempo">00:00:00</p>
+    <button onclick="iniciar()">Iniciar</button>
+    <button onclick="pausar()">Pausar</button>
+    <button onclick="zerar()">Zerar</button>
+    <script>
+        let tempo = 0;
+        let intervalo = null;
+        const display = document.getElementById('tempo');
+        function atualizarTempo() {
+            const horas = Math.floor(tempo / 3600);
+            const minutos = Math.floor((tempo % 3600) / 60);
+            const segundos = tempo % 60;
+            display.textContent = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+        }
+        function iniciar() {
+            if (!intervalo) {
+                intervalo = setInterval(() => {
+                    tempo++;
+                    atualizarTempo();
+                }, 1000);
+            }
+        }
+        function pausar() {
+            clearInterval(intervalo);
+            intervalo = null;
+        }
+        function zerar() {
+            pausar();
+            tempo = 0;
+            atualizarTempo();
+        }
+    </script>
+</body>
+</html>

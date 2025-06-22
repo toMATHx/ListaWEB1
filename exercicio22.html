@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 22 - Parágrafo Desaparece</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #paragrafo { font-size: 18px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Parágrafo com Duplo Clique</h1>
+    <p id="paragrafo">Clique duas vezes para me fazer desaparecer!</p>
+    <script>
+        const paragrafo = document.getElementById('paragrafo');
+        paragrafo.addEventListener('dblclick', function() {
+            paragrafo.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

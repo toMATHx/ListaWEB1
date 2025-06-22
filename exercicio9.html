@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 9 - Mudar Cor de Fundo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; transition: background-color 0.3s; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Mudar Cor de Fundo</h1>
+    <button onclick="mudarCor()">Mudar Cor</button>
+    <script>
+        const cores = ['red', 'blue', 'green', 'yellow'];
+        function mudarCor() {
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            document.body.style.backgroundColor = corAleatoria;
+        }
+    </script>
+</body>
+</html>

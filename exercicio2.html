@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Tabuada</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 5px; }
+        #resultado { text-align: left; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="calcularTabuada()">Calcular</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularTabuada() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+            if (isNaN(numero)) {
+                resultado.textContent = "Por favor, digite um número válido.";
+                return;
+            }
+            for (let i = 1; i <= 10; i++) {
+                resultado.innerHTML += `${numero} x ${i} = ${numero * i}<br>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 19 - Contador de Cliques</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { margin: 10px; padding: 10px 20px; }
+        #contador { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <button id="btnContador">Contador</button>
+    <p>Cliques: <span id="contador">0</span></p>
+    <script>
+        let cliques = 0;
+        const btnContador = document.getElementById('btnContador');
+        const contador = document.getElementById('contador');
+        btnContador.addEventListener('click', function() {
+            cliques++;
+            contador.textContent = cliques;
+        });
+    </script>
+</body>
+</html>

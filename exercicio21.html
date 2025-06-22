@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 21 - Tecla Pressionada</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, span { margin: 10px; }
+        #teclaPressionada { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Tecla Pressionada</h1>
+    <input type="text" id="inputTecla" placeholder="Digite aqui">
+    <p>Última tecla: <span id="teclaPressionada"></span></p>
+    <script>
+        const inputTecla = document.getElementById('inputTecla');
+        const teclaPressionada = document.getElementById('teclaPressionada');
+        inputTecla.addEventListener('keydown', function(e) {
+            teclaPressionada.textContent = e.key;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 - Mudar Cor de Fundo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s;
+        }
+        .container {
+            text-align: center;
+        }
+        .radio-group {
+            margin: 20px 0;
+        }
+        .radio-group label {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha uma cor de fundo</h1>
+        <div class="radio-group">
+            <input type="radio" id="red" name="color" value="red">
+            <label for="red">Vermelho</label>
+            <input type="radio" id="blue" name="color" value="blue">
+            <label for="blue">Azul</label>
+            <input type="radio" id="green" name="color" value="green">
+            <label for="green">Verde</label>
+            <input type="radio" id="yellow" name="color" value="yellow">
+            <label for="yellow">Amarelo</label>
+        </div>
+    </div>
+    <script>
+        const radios = document.querySelectorAll('input[name="color"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.body.style.backgroundColor = this.value;
+            });
+        });
+    </script>
+</body>
+</html>

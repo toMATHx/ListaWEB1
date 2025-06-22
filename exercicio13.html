@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 13 - Conversão de Temperatura</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Conversão de Temperatura</h1>
+    <input type="number" id="temperatura" placeholder="Digite a temperatura">
+    <button onclick="converterParaCelsius()">Para Celsius</button>
+    <button onclick="converterParaFahrenheit()">Para Fahrenheit</button>
+    <p id="resultado"></p>
+    <script>
+        function converterParaCelsius() {
+            const temp = parseFloat(document.getElementById('temperatura').value);
+            const resultado = document.getElementById('resultado');
+            if (isNaN(temp)) {
+                resultado.textContent = "Digite uma temperatura válida.";
+                return;
+            }
+            const celsius = (temp - 32) * 5 / 9;
+            resultado.textContent = `${celsius.toFixed(2)} °C`;
+        }
+        function converterParaFahrenheit() {
+            const temp = parseFloat(document.getElementById('temperatura').value);
+            const resultado = document.getElementById('resultado');
+            if (isNaN(temp)) {
+                resultado.textContent = "Digite uma temperatura válida.";
+                return;
+            }
+            const fahrenheit = (temp * 9 / 5) + 32;
+            resultado.textContent = `${fahrenheit.toFixed(2)} °F`;
+        }
+    </script>
+</body>
+</html>

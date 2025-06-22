@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 14 - Mensagem de Boas-Vindas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Boas-Vindas</h1>
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <button onclick="exibirMensagem()">Enviar</button>
+    <script>
+        function exibirMensagem() {
+            const nome = document.getElementById('nome').value;
+            if (nome) {
+                alert(`Olá ${nome}. Seja bem-vindo(a)!`);
+            } else {
+                alert("Por favor, digite seu nome.");
+            }
+        }
+    </script>
+</body>
+</html>

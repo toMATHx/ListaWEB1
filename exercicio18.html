@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 18 - Botão Cor Aleatória</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Botão com Cor Aleatória</h1>
+    <button id="btnCor">Mudar Cor</button>
+    <script>
+        const btnCor = document.getElementById('btnCor');
+        const cores = ['red', 'blue', 'yellow', 'green', 'purple'];
+        btnCor.addEventListener('click', function() {
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            btnCor.style.backgroundColor = corAleatoria;
+        });
+    </script>
+</body>
+</html>

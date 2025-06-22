@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1 - Par ou Ímpar</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Par ou Ímpar</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="verificar()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificar() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado = document.getElementById('resultado');
+            if (isNaN(numero)) {
+                resultado.textContent = "Por favor, digite um número válido.";
+            } else {
+                resultado.textContent = numero % 2 === 0 ? "O número é par." : "O número é ímpar.";
+            }
+        }
+    </script>
+</body>
+</html>

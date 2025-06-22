@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 11 - Calculadora</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">×</button>
+    <button onclick="dividir()">÷</button>
+    <p id="resultado"></p>
+    <script>
+        function somar() {
+            calcular('+');
+        }
+        function subtrair() {
+            calcular('-');
+        }
+        function multiplicar() {
+            calcular('*');
+        }
+        function dividir() {
+            calcular('/');
+        }
+        function calcular(operacao) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const resultado = document.getElementById('resultado');
+            if (isNaN(num1) || isNaN(num2)) {
+                resultado.textContent = "Digite números válidos.";
+                return;
+            }
+            let res;
+            switch (operacao) {
+                case '+': res = num1 + num2; break;
+                case '-': res = num1 - num2; break;
+                case '*': res = num1 * num2; break;
+                case '/': 
+                    if (num2 === 0) {
+                        resultado.textContent = "Divisão por zero não permitida.";
+                        return;
+                    }
+                    res = num1 / num2; break;
+            }
+            resultado.textContent = `Resultado: ${res}`;
+        }
+    </script>
+</body>
+</html>

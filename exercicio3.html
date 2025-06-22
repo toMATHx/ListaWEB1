@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Contador</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { margin: 10px; padding: 5px 10px; }
+        #numero { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h1>Contador</h1>
+    <p id="numero">0</p>
+    <button onclick="aumentar()">Aumentar</button>
+    <button onclick="diminuir()">Diminuir</button>
+    <script>
+        let valor = 0;
+        const numero = document.getElementById('numero');
+        function aumentar() {
+            valor++;
+            numero.textContent = valor;
+        }
+        function diminuir() {
+            valor--;
+            numero.textContent = valor;
+        }
+    </script>
+</body>
+</html>

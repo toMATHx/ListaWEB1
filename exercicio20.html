@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 20 - Texto Hover</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #textoHover { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Texto com Hover</h1>
+    <p id="textoHover">Passe o mouse aqui!</p>
+    <script>
+        const textoHover = document.getElementById('textoHover');
+        const textoOriginal = textoHover.textContent;
+        textoHover.addEventListener('mouseover', function() {
+            textoHover.textContent = 'Você passou o mouse!';
+        });
+        textoHover.addEventListener('mouseout', function() {
+            textoHover.textContent = textoOriginal;
+        });
+    </script>
+</body>
+</html>
